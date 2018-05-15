@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  margin-top: 30px;
+  border: 2px solid grey;
+  width:55%;
+  align-self: center;
+  border-spacing: 30px;
+  border-collapse: separate;
+  height: 50%;
+}
+
+.container > * {
+  width: 70%;
+  margin: auto;
+}
+.buttonClass {
+	font-size: 30px;
+	width:100%;
+}
+.buttonWrapper{
+margin-top: 20px !important;
+margin-bottom: 20px !important;
+}
