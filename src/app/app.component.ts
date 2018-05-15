@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,15 @@ import {FormsModule} from '@angular/forms';
 export class AppComponent {
   title = 'app';
   aprValue;
+  resultValue;
   showApproveBtn = false;
-  @ViewChild('form') form: FormsModule;
+  @ViewChild('form') form: NgForm;
 
 
 	generateAPR(): void {
 		this.aprValue = this.random(6,9).toString() + " %"
     this.showApproveBtn = true;
+    this.resultValue = 'Approved';
 	}
 
 	random(min, max): number{
@@ -26,6 +28,7 @@ export class AppComponent {
     this.form.reset();
     this.aprValue = '';
     this.showApproveBtn=false;
+    this.resultValue = '';
   }
 
 
