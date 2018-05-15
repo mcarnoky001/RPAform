@@ -1,42 +1,67 @@
+<div class="title">
+  <h1 class="display-4">Loan Application Engine</h1>
+</div>
 <div class="container">
-  <mat-form-field>
-    <input id="name" matInput placeholder="Name">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="address" matInput placeholder="Address">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="age" matInput placeholder="Age">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="occupation" matInput placeholder="Occupation">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="existingLoans" matInput placeholder="Existing loans">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="riskRating" matInput placeholder="Risk rating">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="loanType" matInput placeholder="Type of loan">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="loanAmount" matInput placeholder="Loan amount">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="maritalStatus" matInput placeholder="Marital status">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="annualIncome" matInput placeholder="Annual income">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="income" matInput placeholder="Monthly discretionary income">
-  </mat-form-field>
-  <mat-form-field>
-    <input id="apr" #apr matInput placeholder="APR">{{aprValue}}
-  </mat-form-field>
-  <mat-checkbox id="approve" formControlName="approveRequired">Approved?</mat-checkbox>
-  <div class="buttonWrapper">
-    <button id="submitBtn" type="button" class="btn btn-success buttonClass" (click)="generateAPR()">Submit</button>
-  </div>
+  <form  #form="ngForm" style="margin-top:10px">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field>
+          <input name="name" ngModel matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="address" ngModel matInput placeholder="Address">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="age" ngModel matInput placeholder="Age">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="occupation" ngModel matInput placeholder="Occupation">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="existingLoans" ngModel matInput placeholder="Existing loans">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="riskRating" ngModel matInput placeholder="Risk rating">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="maritalStatus" ngModel matInput placeholder="Marital status">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="annualIncome" ngModel matInput placeholder="Annual income">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="income" ngModel matInput placeholder="Monthly discretionary income">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field>
+          <input name="loanAmount" ngModel matInput placeholder="Loan amount">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="loanType" ngModel matInput placeholder="Type of loan">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="loanType" ngModel matInput placeholder="Term of loan">
+        </mat-form-field>
+        <mat-form-field>
+          <input name="apr" #apr ngModel matInput placeholder="APR">{{aprValue}}
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="buttonWrapper">
+          <button *ngIf="showApproveBtn" id="approveBtn" type="button" class="btn btn-warning buttonClass" (click)="reset()">Approve</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="buttonWrapper">
+          <button id="submitBtn" type="button" class="btn btn-success buttonClass" (click)="generateAPR()">Submit</button>
+          <div class="buttonSubText">
+            For credit check
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
