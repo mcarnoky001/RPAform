@@ -2,7 +2,7 @@
   <h1 class="display-4">Loan Application Engine</h1>
 </div>
 <div class="container">
-  <form  #form="ngForm" style="margin-top:10px">
+  <form #form="ngForm" style="margin-top:10px">
     <div class="row">
       <div class="col-md-6">
         <mat-form-field>
@@ -44,11 +44,13 @@
           <input name="loanType" ngModel matInput placeholder="Term of loan">
         </mat-form-field>
         <mat-form-field>
-          <input name="apr" #apr ngModel matInput placeholder="APR">{{aprValue}}
+          <input name="result" #result ngModel matInput placeholder="Credit Check Result">{{resultValue}}
         </mat-form-field>
-        <mat-form-field>
-          <input name="result" #result ngModel matInput placeholder="Result">{{resultValue}}
-        </mat-form-field>
+        <div class="aprWrapper">
+          <mat-form-field>
+            <input name="apr" #apr ngModel matInput placeholder="APR">{{aprValue}}
+          </mat-form-field>
+        </div>
       </div>
     </div>
     <div class="row">

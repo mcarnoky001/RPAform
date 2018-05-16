@@ -17,7 +17,7 @@ export class AppComponent {
 	generateAPR(): void {
 		this.aprValue = this.random(6,9).toString() + " %"
     this.showApproveBtn = true;
-    this.resultValue = 'Approved';
+    this.resultValue = 'Positive';
 	}
 
 	random(min, max): number{
