@@ -33,7 +33,23 @@ margin-bottom: 20px !important;
   margin: auto;
 }
 .aprWrapper{
-  margin-top: 100px;
-  border: 2px solid #344955;
-
+  margin-top: 50px;
+  border: 2px solid #ffc107;
+}
+.ccrWrapper{
+  margin-top: 50px;
+  border: 2px solid #28a745;
+}
+.btn-success:hover {
+    border: 5px solid;
+}
+.ccrWrapperHighlated{
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 10px #28a745;
+}
+.aprWrapperHighlated{
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 10px #ffc107;
 }

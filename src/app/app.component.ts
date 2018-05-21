@@ -8,16 +8,26 @@ import {FormsModule,NgForm} from '@angular/forms';
 })
 export class AppComponent {
   title = 'app';
+  counter = 0;
   aprValue;
   resultValue;
-  showApproveBtn = false;
+  showApproveBtn = true;
+  ccrHighlight = false;
+  arpHighlight = false;
   @ViewChild('form') form: NgForm;
 
 
-	generateAPR(): void {
-		this.aprValue = this.random(6,9).toString() + " %"
-    this.showApproveBtn = true;
-    this.resultValue = 'Positive';
+	generateResultValue(): void {
+    if(this.counter == 4 || this.counter == 7){
+      this.resultValue = 'Negative';
+    }
+    else{
+      this.resultValue = 'Positive';
+    }
+    this.counter++;
+    this.ccrHighlight = true;
+    window.setTimeout(() => this.ccrHighlight = false, 200)
+
 	}
 
 	random(min, max): number{
@@ -27,10 +37,15 @@ export class AppComponent {
   reset():void{
     this.form.reset();
     this.aprValue = '';
-    this.showApproveBtn=false;
     this.resultValue = '';
   }
 
+  generateAPR():void{
+    this.aprValue = this.random(6,9).toString() + " %";
+    this.arpHighlight = true;
+    window.setTimeout(() => this.arpHighlight = false, 200)
+
+  }
 
 
 }
