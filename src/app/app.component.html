@@ -1,5 +1,8 @@
 <div class="title">
-  <h1 (click)="reset()" class="display-4">Loan Application Engine</h1>
+  <h1 (click)="reset()" class="display-4">Loan Pricing Engine</h1>
+</div>
+<div *ngIf="showSpinner" class="spinnerWrapper">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
 </div>
 <div class="container">
   <form #form="ngForm" style="margin-top:10px">
@@ -63,7 +66,7 @@
       </div>
       <div class="col-md-6">
         <div class="buttonWrapper">
-          <button *ngIf="showApproveBtn" id="approveBtn" type="button" class="btn btn-warning buttonClass" (click)="generateAPR()">Pricing</button>
+          <button  id="approveBtn" type="button" class="btn btn-warning buttonClass" (click)="generateAPR()">Pricing</button>
         </div>
       </div>
     </div>

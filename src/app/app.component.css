@@ -53,3 +53,11 @@ margin-bottom: 20px !important;
     border-color: #ffc107;
     box-shadow: 0 0 10px #ffc107;
 }
+.spinnerWrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
