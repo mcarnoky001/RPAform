@@ -1,6 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
 import {FormsModule,NgForm} from '@angular/forms';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-root',
@@ -15,15 +14,12 @@ export class AppComponent {
   showApproveBtn = true;
   ccrHighlight = false;
   arpHighlight = false;
-  showSpinner = false;
   @ViewChild('form') form: NgForm;
 
 
 	generateResultValue(): void {
     this.counter++;
-    this.showSpinner = true;
-    window.setTimeout(() => {this.showSpinner = false;this.ccrHighlight = true;this.setCCR();
-    window.setTimeout(() => {this.ccrHighlight = false}, 200)}, 3000)
+    window.setTimeout(() => {this.ccrHighlight = true;this.setCCR();window.setTimeout(() => {this.ccrHighlight = false}, 200)}, 2000)
 
 	}
 
@@ -50,9 +46,7 @@ export class AppComponent {
   }
 
   generateAPR():void{
-    this.showSpinner = true;
-    window.setTimeout(() => {this.showSpinner = false;this.arpHighlight = true;this.setAPR();
-    window.setTimeout(() => {this.arpHighlight = false}, 200)}, 3000)
+    window.setTimeout(() => {this.arpHighlight = true;this.setAPR();window.setTimeout(() => {this.arpHighlight = false}, 200)}, 2000)
 
   }
 
