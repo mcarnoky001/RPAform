@@ -19,7 +19,7 @@ export class AppComponent {
 
 	generateResultValue(): void {
     this.counter++;
-    window.setTimeout(() => {this.ccrHighlight = true;this.setCCR();window.setTimeout(() => {this.ccrHighlight = false}, 200)}, 2000)
+    window.setTimeout(() => {this.ccrHighlight = true;this.setCCR();window.setTimeout(() => {this.ccrHighlight = false}, 200)}, 1000)
 
 	}
 
@@ -46,7 +46,7 @@ export class AppComponent {
   }
 
   generateAPR():void{
-    window.setTimeout(() => {this.arpHighlight = true;this.setAPR();window.setTimeout(() => {this.arpHighlight = false}, 200)}, 2000)
+    window.setTimeout(() => {this.arpHighlight = true;this.setAPR();window.setTimeout(() => {this.arpHighlight = false}, 200)}, 1000)
 
   }
 
